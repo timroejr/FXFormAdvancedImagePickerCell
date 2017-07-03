@@ -32,7 +32,7 @@ Create a new property of a 'NSArray' to store data from the Cell
 @end
 ```
 
-In your .m file, you can create the Cell by using the following in your '-(NSArray *)fields' method:
+In your .m file, you can create the Cell by using the following in your `-(NSArray *)fields` method:
 
 ```objc
 -(NSArray *)fields {
