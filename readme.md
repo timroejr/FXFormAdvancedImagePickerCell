@@ -1,42 +1,44 @@
 FXFormAdvancedImagePickerCell
 ------------------------
-'FXFormAdvancedImagePickerCell' is a modification to 'FXFormImagePickerCell' provided in [FXForms](https://github.com/nicklockwood/FXForms).
+FXFormAdvancedImagePickerCell is a modification to FXFormImagePickerCell provided in [FXForms](https://github.com/nicklockwood/FXForms).
 
-'FXFormAdvancedImagePickerCell' is made to get a image from the user, and create a Dictionary that contains a UIImage, NSString for a date, and CLLocation taken directly from the UIImage.
-The Dictionary is sent back the the main FXFormViewController as a 'NSArray' with 'NSDictionary's inside of it.
+FXFormAdvancedImagePickerCell is made to get a image from the user, and create a Dictionary that contains a UIImage, NSString for a date, and CLLocation taken directly from the UIImage.
+The Dictionary is sent back the the main FXFormViewController as a `NSArray` with `NSDictionary`s inside of it.
 
 Installation
 --------------
-'FXForms' needs to already be copied to the target you intend to use 'FXFormAdvancedImagePickerCell' on.
-'FXFormAdvancedImagePickerCell' requires CoreLocation and Photos. Import these into your target as well.
-Finally copy 'FXFormAdvancedImagePickerCell' right into your target.
+FXForms needs to already be copied to the target you intend to use FXFormAdvancedImagePickerCell on.
+FXFormAdvancedImagePickerCell requires CoreLocation and Photos. Import these into your target as well.
+Finally copy FXFormAdvancedImagePickerCell right into your target.
 
 Usage
 -------
-To Use FXFormAdvancedImagePickerCell in your FXForm first create a new form by subclassing NSObject with a delegate of '<FXForm>'
-''''objc
+To Use FXFormAdvancedImagePickerCell in your FXForm first create a new form by subclassing NSObject with a delegate of `<FXForm>`
+
+```objc
 #import "FXForms.h"
 @interface MyForm : NSObject <FXForm>
 
 @end
-''''
+```
 
 Create a new property of a 'NSArray' to store data from the Cell
-''''objc
+```objc
 #import "FXForms.h"
 @interface MyForm : NSObject <FXForm>
 
 @property (nonatomic, strong) NSArray *photos;
 
 @end
-''''
+```
 
 In your .m file, you can create the Cell by using the following in your '-(NSArray *)fields' method:
-''''objc
+
+```objc
 -(NSArray *)fields {
 	return @[@{FXFormFieldKey: @"photos", FXFormFieldTemplate:@[@{FXFormFieldType: FXFormFieldTypeImage, FXFormFieldTitle: @"Add Photo", FXFormFieldCell: [FXFormAdvancedImagePickerCell class]}];
 }
-''''
+```
 
 It's as simple as that!
 
